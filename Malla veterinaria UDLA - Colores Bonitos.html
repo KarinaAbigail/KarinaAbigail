@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Veterinaria UDLA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #880e4f;
+    }
+    .contenedor {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px;
+    }
+    .semestre {
+      background-color: #fce4ec;
+      border-radius: 15px;
+      padding: 15px;
+      min-width: 230px;
+      flex: 0 0 auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .semestre h2 {
+      text-align: center;
+      color: #ad1457;
+      margin-top: 0;
+    }
+    .ramo {
+      background-color: #f8bbd0;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #4a004e;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .ramo:hover::after {
+      content: attr(data-descripcion);
+      position: absolute;
+      background: #6a1b9a;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 10;
+      font-size: 13px;
+      font-weight: normal;
+    }
+    .ramo.bloqueado {
+      background-color: #e1bee7;
+      color: #7b1fa2;
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .ramo.aprobado {
+      background-color: #c8e6c9;
+      color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+<h1>Malla Medicina Veterinaria - UDLA</h1>
+<div class="contenedor">
+<div class="semestre"><h2>1° Semestre</h2>
+<div class="ramo" id="matemática_general" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Matemática general</div>
+<div class="ramo" id="biología_celular" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Biología celular</div>
+<div class="ramo" id="introducción_a_la_med_vet" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Introducción a la med vet</div>
+<div class="ramo" id="taller_de_comprensión_oral_y_escrita" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Taller de comprensión oral y escrita</div>
+<div class="ramo" id="química" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Química</div>
+</div><div class="semestre"><h2>2° Semestre</h2>
+<div class="ramo" id="histoembriología" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Histoembriología</div>
+<div class="ramo" id="anatomía_del_canino" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Anatomía del Canino</div>
+<div class="ramo" id="bioquímica" data-prerrequisitos="química" data-descripcion="Prerrequisitos: Química">Bioquímica</div>
+<div class="ramo" id="inglés_i" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Inglés I</div>
+<div class="ramo" id="bioestadística" data-prerrequisitos="matemática_general" data-descripcion="Prerrequisitos: Matemática general">Bioestadística</div>
+</div><div class="semestre"><h2>3° Semestre</h2>
+<div class="ramo" id="práctica_básica" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Práctica básica</div>
+<div class="ramo" id="inglés_ii" data-prerrequisitos="inglés_i" data-descripcion="Prerrequisitos: Inglés I">Inglés II</div>
+<div class="ramo" id="zoología" data-prerrequisitos="biología_celular" data-descripcion="Prerrequisitos: Biología celular">Zoología</div>
+<div class="ramo" id="medio_ambiente_y_gestión_ambiental" data-prerrequisitos="biología_celular" data-descripcion="Prerrequisitos: Biología celular">Medio Ambiente y Gestión Ambiental</div>
+<div class="ramo" id="anatomía_comparada" data-prerrequisitos="anatomía_del_canino" data-descripcion="Prerrequisitos: Anatomía del Canino">Anatomía Comparada</div>
+</div><div class="semestre"><h2>4° Semestre</h2>
+<div class="ramo" id="microbiología" data-prerrequisitos="biología_celular" data-descripcion="Prerrequisitos: Biología celular">Microbiología</div>
+<div class="ramo" id="fisiología_animal" data-prerrequisitos="anatomía_del_canino,bioquímica" data-descripcion="Prerrequisitos: Anatomía del Canino, Bioquímica">Fisiología Animal</div>
+<div class="ramo" id="enfermedades_parasitarias" data-prerrequisitos="histoembriología" data-descripcion="Prerrequisitos: Histoembriología">Enfermedades Parasitarias</div>
+<div class="ramo" id="administración_y_emprendimiento_veterinario" data-prerrequisitos="" data-descripcion="Prerrequisitos: Ninguno">Administración y Emprendimiento Veterinario</div>
+<div class="ramo" id="genética" data-prerrequisitos="bioestadística" data-descripcion="Prerrequisitos: Bioestadística">Genética</div>
+</div><div class="semestre"><h2>5° Semestre</h2>
+<div class="ramo" id="tecnología_de_los_alimentos" data-prerrequisitos="microbiología" data-descripcion="Prerrequisitos: Microbiología">Tecnología de los Alimentos</div>
+<div class="ramo" id="fisiopatología" data-prerrequisitos="fisiología_animal" data-descripcion="Prerrequisitos: Fisiología Animal">Fisiopatología</div>
+<div class="ramo" id="etología_y_bienestar_animal" data-prerrequisitos="zoología" data-descripcion="Prerrequisitos: Zoología">Etología y Bienestar Animal</div>
+<div class="ramo" id="reproducción_e_inseminación_artificial" data-prerrequisitos="fisiología_animal" data-descripcion="Prerrequisitos: Fisiología Animal">Reproducción e Inseminación Artificial</div>
+<div class="ramo" id="inmunología" data-prerrequisitos="microbiología" data-descripcion="Prerrequisitos: Microbiología">Inmunología</div>
+<div class="ramo" id="nutrición_y_alimentación_animal" data-prerrequisitos="bioquímica" data-descripcion="Prerrequisitos: Bioquímica">Nutrición y Alimentación Animal</div>
+</div><div class="semestre"><h2>6° Semestre</h2>
+<div class="ramo" id="patología_de_sistemas" data-prerrequisitos="fisiopatología" data-descripcion="Prerrequisitos: Fisiopatología">Patología de Sistemas</div>
+<div class="ramo" id="farmacología_y_toxicología" data-prerrequisitos="fisiología_animal" data-descripcion="Prerrequisitos: Fisiología Animal">Farmacología y Toxicología</div>
+<div class="ramo" id="obstetricia_y_ginecología" data-prerrequisitos="reproducción_e_inseminación_artificial" data-descripcion="Prerrequisitos: Reproducción e Inseminación Artificial">Obstetricia y Ginecología</div>
+<div class="ramo" id="enfermedades_infecciosas" data-prerrequisitos="inmunología" data-descripcion="Prerrequisitos: Inmunología">Enfermedades Infecciosas</div>
+<div class="ramo" id="control_de_calidad_de_los_alimentos" data-prerrequisitos="tecnología_de_los_alimentos,enfermedades_parasitarias" data-descripcion="Prerrequisitos: Tecnología de los Alimentos, Enfermedades Parasitarias">Control de Calidad de los Alimentos</div>
+<div class="ramo" id="producción_avícola" data-prerrequisitos="nutrición_y_alimentación_animal" data-descripcion="Prerrequisitos: Nutrición y Alimentación Animal">Producción Avícola</div>
+</div><div class="semestre"><h2>7° Semestre</h2>
+<div class="ramo" id="epidemiología_veterinaria" data-prerrequisitos="enfermedades_infecciosas" data-descripcion="Prerrequisitos: Enfermedades Infecciosas">Epidemiología Veterinaria</div>
+<div class="ramo" id="práctica_intermedia" data-prerrequisitos="farmacología_y_toxicología,enfermedades_infecciosas" data-descripcion="Prerrequisitos: Farmacología y Toxicología, Enfermedades Infecciosas">Práctica Intermedia</div>
+<div class="ramo" id="laboratorio_clínico" data-prerrequisitos="patología_de_sistemas" data-descripcion="Prerrequisitos: Patología de Sistemas">Laboratorio Clínico</div>
+<div class="ramo" id="producción_ovinos_y_caprinos" data-prerrequisitos="genética" data-descripcion="Prerrequisitos: Genética">Producción Ovinos y Caprinos</div>
+<div class="ramo" id="producción_porcina" data-prerrequisitos="reproducción_e_inseminación_artificial" data-descripcion="Prerrequisitos: Reproducción e Inseminación Artificial">Producción Porcina</div>
+<div class="ramo" id="semiología" data-prerrequisitos="farmacología_y_toxicología,fisiopatología,anatomía_comparada" data-descripcion="Prerrequisitos: Farmacología y Toxicología, Fisiopatología, Anatomía Comparada">Semiología</div>
+</div><div class="semestre"><h2>8° Semestre</h2>
+<div class="ramo" id="medicina_de_felinos" data-prerrequisitos="laboratorio_clínico,semiología" data-descripcion="Prerrequisitos: Laboratorio Clínico, Semiología">Medicina de Felinos</div>
+<div class="ramo" id="cirugía_general" data-prerrequisitos="semiología" data-descripcion="Prerrequisitos: Semiología">Cirugía General</div>
+<div class="ramo" id="medicina_de_animales_exóticos" data-prerrequisitos="laboratorio_clínico,semiología" data-descripcion="Prerrequisitos: Laboratorio Clínico, Semiología">Medicina de Animales Exóticos</div>
+<div class="ramo" id="medicina_de_caninos" data-prerrequisitos="laboratorio_clínico,semiología" data-descripcion="Prerrequisitos: Laboratorio Clínico, Semiología">Medicina de Caninos</div>
+<div class="ramo" id="medicina_de_animales_mayores" data-prerrequisitos="laboratorio_clínico,semiología" data-descripcion="Prerrequisitos: Laboratorio Clínico, Semiología">Medicina de Animales Mayores</div>
+</div><div class="semestre"><h2>9° Semestre</h2>
+<div class="ramo" id="producción_bovinos_de_carne_y_leche" data-prerrequisitos="obstetricia_y_ginecología" data-descripcion="Prerrequisitos: Obstetricia y Ginecología">Producción Bovinos de Carne y Leche</div>
+<div class="ramo" id="metodología_de_la_investigación" data-prerrequisitos="epidemiología_veterinaria" data-descripcion="Prerrequisitos: Epidemiología Veterinaria">Metodología de la Investigación</div>
+<div class="ramo" id="producción_acuícola" data-prerrequisitos="nutrición_y_alimentación_animal" data-descripcion="Prerrequisitos: Nutrición y Alimentación Animal">Producción Acuícola</div>
+<div class="ramo" id="patología_quirúrgica" data-prerrequisitos="cirugía_general" data-descripcion="Prerrequisitos: Cirugía General">Patología Quirúrgica</div>
+<div class="ramo" id="formulación_y_evaluación_de_proyectos_agropecuarios" data-prerrequisitos="administración_y_emprendimiento_veterinario" data-descripcion="Prerrequisitos: Administración y Emprendimiento Veterinario">Formulación y Evaluación de Proyectos Agropecuarios</div>
+<div class="ramo" id="práctica_final" data-prerrequisitos="práctica_intermedia" data-descripcion="Prerrequisitos: Práctica Intermedia">Práctica Final</div>
+<div class="ramo" id="diagnóstico_por_imágenes" data-prerrequisitos="patología_de_sistemas" data-descripcion="Prerrequisitos: Patología de Sistemas">Diagnóstico por Imágenes</div>
+</div><div class="semestre"><h2>10° Semestre</h2>
+<div class="ramo" id="salud_pública" data-prerrequisitos="control_de_calidad_de_los_alimentos" data-descripcion="Prerrequisitos: Control de Calidad de los Alimentos">Salud Pública</div>
+<div class="ramo" id="clínica_de_animales_menores" data-prerrequisitos="medicina_de_caninos" data-descripcion="Prerrequisitos: Medicina de Caninos">Clínica de Animales Menores</div>
+<div class="ramo" id="clínica_de_animales_mayores" data-prerrequisitos="medicina_de_animales_mayores,diagnóstico_por_imágenes" data-descripcion="Prerrequisitos: Medicina de Animales Mayores, Diagnóstico por Imágenes">Clínica de Animales Mayores</div>
+<div class="ramo" id="farmacología_aplicada" data-prerrequisitos="medicina_de_animales_mayores,medicina_de_caninos" data-descripcion="Prerrequisitos: Medicina de Animales Mayores, Medicina de Caninos">Farmacología Aplicada</div>
+<div class="ramo" id="trabajo_de_titulación" data-prerrequisitos="metodología_de_la_investigación" data-descripcion="Prerrequisitos: Metodología de la Investigación">Trabajo de Titulación</div>
+</div>
+</div>
+<script>
+  const ramos = document.querySelectorAll('.ramo');
+  const estado = JSON.parse(localStorage.getItem('estadoRamos') || '{}');
+
+  function actualizarEstadoVisual() {
+    ramos.forEach(ramo => {
+      const id = ramo.id;
+      const prerreqs = ramo.dataset.prerrequisitos.split(',').filter(p => p);
+      const aprobados = prerreqs.every(p => estado[p]);
+      if (!aprobados && !estado[id]) {
+        ramo.classList.add('bloqueado');
+      } else {
+        ramo.classList.remove('bloqueado');
+      }
+
+      if (estado[id]) {
+        ramo.classList.add('aprobado');
+      } else {
+        ramo.classList.remove('aprobado');
+      }
+    });
+  }
+
+  ramos.forEach(ramo => {
+    ramo.addEventListener('click', () => {
+      const id = ramo.id;
+      if (ramo.classList.contains('bloqueado')) return;
+      estado[id] = !estado[id];
+      localStorage.setItem('estadoRamos', JSON.stringify(estado));
+      actualizarEstadoVisual();
+    });
+  });
+
+  actualizarEstadoVisual();
+</script>
+</body>
+</html>
